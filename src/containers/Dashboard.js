@@ -2,19 +2,18 @@ import React, { useState, useEffect } from "react"
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native"
 
 const Dashboard = (props) => {
-  const [text, setText] = useState("hello world")
-
+  const [text, setText] = useState(props.text)
 
   // useEffect(() => {
-  //   setText("Welcome")
+    // setText(props.text)
   // }, [])
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "white" }}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center"}}>
       <TextInput
         value={text}
         onChangeText={setText}
-        style={{ fontSize: 50 }}
+        style={{ fontSize: 20 }}
         multiline
       >
       </TextInput>

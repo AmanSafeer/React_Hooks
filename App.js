@@ -7,38 +7,16 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Platform
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 import { Dashboard } from './src/containers'
+import Store from "./src/store"
+import { Provider } from "react-redux"
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="light-content" backgroundColor="black" />
-      {Platform.OS == "ios" ?
-        <SafeAreaView>
-          <Dashboard text="Welcome" />
-        </SafeAreaView>
-        :
-        <Dashboard text="Welcome"/>
-      }
-    </>
+      <Provider store={Store}>
+        <Dashboard text="Welcome to react hooks" />
+      </Provider>
   );
 };
 
